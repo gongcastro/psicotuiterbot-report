@@ -2,6 +2,7 @@
 
 library(dplyr)
 library(purrr)
+library(tidyr)
 library(ggplot2)
 library(rtweet)
 library(igraph)
@@ -52,6 +53,3 @@ count(followers, account) %>%
     geom_col()
 
 # get common followers from the top N accounts
-common <- split(followers, followers$account) %>% 
-    map("user_id") %>% 
-    reduce(intersect)
